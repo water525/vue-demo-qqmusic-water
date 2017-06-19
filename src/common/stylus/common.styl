@@ -1,0 +1,106 @@
+
+.clearfix
+  overflow: hidden
+  &::after
+    content: ''
+    display: block
+    clear: both
+
+.space
+  white-space: nowrap
+  text-overflow: ellipsis
+  overflow: hidden
+
+.btn-back
+  position: absolute
+  top: 10px
+  left: 10px
+  padding: 5px
+  border-radius: 50%
+  background: rgba(0, 0, 0, .25)
+  .icon-left
+    display: inline-block
+    width: 20px
+    height: 20px
+    background: url(../../../static/images/goback.png) no-repeat center
+    background-size: auto 100%
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2)
+  .border-tb
+    &:after
+      transform: scaleY(0.5)
+
+  .border-lt
+    &:after
+      transform: scaleX(0.5)
+
+@media (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5)
+  .border-tb
+    &:after
+      transform: scaleY(0.7)
+
+  .border-lt
+    &:after
+      transform: scaleX(0.7)
+
+.rotateLoop
+  -webkit-animation: rotateLoop 10s linear infinite
+  animation: rotateLoop 10s linear infinite
+
+@keyframes rotateLoop
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+@-webkit-keyframes rotateLoop
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+
+.currentAni
+  display: block
+  width: 18px
+  height: 12px
+  overflow: hidden
+  i
+    display: block
+    float: left
+    width: 1px
+    height: 12px
+    background: #31c27c
+    margin: 0 1px
+    &:nth-child(1)
+      -webkit-animation: musicLoop 1s linear infinite
+      animation: musicLoop 1s linear infinite
+    &:nth-child(2)
+      -webkit-animation: musicLoop 1s linear .4s infinite
+      animation: musicLoop 1s linear .4s infinite
+    &:nth-child(3)
+      -webkit-animation: musicLoop 1s linear .7s infinite
+      animation: musicLoop 1s linear .7s infinite
+    &:nth-child(4)
+      -webkit-animation: musicLoop 1s linear .2s infinite
+      animation: musicLoop 1s linear .2s infinite
+    &:nth-child(5)
+      -webkit-animation: musicLoop 1s linear .8s infinite
+      animation: musicLoop 1s linear .8s infinite
+@-webkit-keyframes musicLoop
+  0%, 100%
+    transform: translate3d(0, 0, 0)
+  50%
+    transform: translate3d(0, 11px, 0)
+@keyframes musicLoop
+  0%, 100%
+    transform: translate3d(0, 0, 0)
+  50%
+    transform: translate3d(0, 11px, 0)
+
+.pauseAni
+  -webkit-animation-play-state: paused
+  animation-play-state: paused
+
+.runingAni
+  -webkit-animation-play-state: running
+  animation-play-state: running

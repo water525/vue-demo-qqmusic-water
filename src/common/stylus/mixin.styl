@@ -1,0 +1,36 @@
+$path = '../../static/images/'
+b-img(name, color = false, agr = false)
+  if color
+    if agr
+      background: color url($path+ name) no-repeat agr[0]
+    else
+      background: color url($path+ name) no-repeat
+  else
+    background: url($path+ name) no-repeat
+
+border-1px(drc = 'top', color = #000)
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    if drc == 'top'
+      top: 0
+      left: 0
+      width: 100%
+      border-top: 1px solid color
+    else if drc == 'bottom'
+      bottom: 0
+      left: 0
+      width: 100%
+      border-top: 1px solid color
+    else if drc == 'left'
+      top: 0
+      left: 0
+      height: 100%
+      border-left: 1px solid color
+    else if drc == 'right'
+      top: 0
+      right: 0
+      height: 100%
+      border-left: 1px solid color
+
